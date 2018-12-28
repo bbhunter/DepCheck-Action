@@ -8,8 +8,7 @@ LABEL com.github.actions.color="Red"
 LABEL "maintainer"="JGamblin <Jerry.Gamblin@Gmail.com>"
 LABEL "repository"="http://github.com/jgamblin/DepCheck-Action"
 
-
-RUN wget -O /tmp/current.txt http://jeremylong.github.io/DependencyCheck/current.txt && current=$(cat /tmp/current.txt) && wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-$current-release.zip && unzip dependency-check-$current-release.zip && mv dependency-check /usr/share/
+RUN wget -O /tmp/current.txt http://jeremylong.github.io/DependencyCheck/current.txt && current=$(cat /tmp/current.txt) && wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-$current-release.zip && unzip dependency-check-$current-release.zip 
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
