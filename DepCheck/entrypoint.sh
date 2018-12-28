@@ -8,7 +8,7 @@ projectname="DepCheck Action"
 ls -l
 
 cat *.csv > temp.csv
-awk '!x[$0]++' temp.csv temp2.csv
+awk '!x[$0]++' temp.csv > temp2.csv
 cut -d',' -f1-4,6- temp2.csv > githubvulns.csv
 cat githubvulns.csv
 
