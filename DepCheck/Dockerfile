@@ -10,10 +10,15 @@ LABEL "repository"="http://github.com/jgamblin/DepCheck-Action"
 
 RUN apt-get update && apt-get install -y \
   curl \
-  wget
-
-
-RUN wget -O /tmp/current.txt http://jeremylong.github.io/DependencyCheck/current.txt && current=$(cat /tmp/current.txt) && wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-$current-release.zip && unzip dependency-check-$current-release.zip
+  wget \
+  ruby \
+  mono-runtime && \
+  gem install bundle-audit && \
+  gem cleanup && \
+  wget -O /tmp/current.txt http://jeremylong.github.io/DependencyCheck/current.txt &&  \
+  current=$(cat /tmp/current.txt) && \
+  wget https://dl.bintray.com/jeremy-long/owasp/dependency-check-$current-release.zip && \
+  unzip dependency-check-$current-release.zip
 
 
 ADD entrypoint.sh /entrypoint.sh
