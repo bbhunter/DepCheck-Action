@@ -7,8 +7,11 @@ projectname="DepCheck Action"
 
 ls -l
 
-cat dependency-check-report.csv
+cat *.csv > temp.csv
+awk '!x[$0]++' temp.csv temp2.csv
+cut -d',' -f1-4,6- temp2.csv > githubvulns.csv
+cat githubvulns.csv
 
-description=$(cat dependency-check-report.csv)
+description=$(cat githubvulns.csv)
 
 curl -i -H 'Authorization: token '$GITHUB_TOKEN''  -H "Content-Type: application/json" -X POST --data '{"title":"'"Report Vuln"'", "body":"'"$description"'"}' https://api.github.com/repos/jgamblin/DepCheck-Action/issues
