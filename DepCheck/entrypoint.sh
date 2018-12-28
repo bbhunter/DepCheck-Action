@@ -7,7 +7,5 @@ projectname="DepCheck Action"
 
 ls -l
 
-cat *.json 
-
 
 #curl -i -H 'Authorization: token '$Github_Auth_Token''  -H "Content-Type: application/json" -X POST --data '{"title":"'"$name"'", "body":"'"$description"'"}' $Github_Repo_URL
