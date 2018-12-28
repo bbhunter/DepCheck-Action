@@ -2,7 +2,7 @@
 projectname="DepCheck Action"
 
 /dependency-check/bin/dependency-check.sh --update
-/dependency-check/bin/dependency-check.sh --project $projectname --enableExperimental  --format JSON --scan /
+/dependency-check/bin/dependency-check.sh --project $projectname --enableExperimental  --format JSON --format VULN --scan /
 
 
 ls -l
