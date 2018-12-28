@@ -5,5 +5,4 @@ workflow "New workflow" {
 
 action "DependencyCheck" {
   uses = "./DepCheck"
-  secrets = ["GITHUB_TOKEN"]
 }
