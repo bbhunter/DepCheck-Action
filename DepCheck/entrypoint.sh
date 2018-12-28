@@ -7,6 +7,6 @@ projectname="DepCheck Action"
 
 ls -l
 
-description=$(cat *.json)
+#description=$(cat *.json)
 
-curl -i -H 'Authorization: token '$GITHUB_TOKEN''  -H "Content-Type: application/json" -X POST --data '{"title":"'"Report Vuln"'", "body":"'"$description"'"}' https://api.github.com/repos/jgamblin/DepCheck-Action/issues
+curl -i -H 'Authorization: token '$GITHUB_TOKEN''  -H "Content-Type: application/json" -X POST --data '{"title":"'"Report Vuln"'", "body":"'"Test"'"}' https://api.github.com/repos/jgamblin/DepCheck-Action/issues
