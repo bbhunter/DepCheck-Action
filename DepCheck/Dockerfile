@@ -13,5 +13,3 @@ RUN wget -O /tmp/current.txt http://jeremylong.github.io/DependencyCheck/current
 
 ADD entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
-
-ENTRYPOINT ["/usr/share/dependency-check/bin/dependency-check.sh", "--help", "/src"]
