@@ -1,6 +1,6 @@
-workflow "New workflow" {
-  on = "push"
+workflow "Run Dep-Check" {
   resolves = ["DependencyCheck"]
+  on = "push"
 }
 
 action "DependencyCheck" {
