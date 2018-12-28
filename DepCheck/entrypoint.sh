@@ -1,6 +1,7 @@
 #!/bin/sh
 projectname="DepCheck Action"
 
+/usr/share/dependency-check/bin/dependency-check.sh --update
 
 /usr/share/dependency-check/bin/dependency-check.sh --project $projectname --enableExperimental  --format JSON --scan /
 
